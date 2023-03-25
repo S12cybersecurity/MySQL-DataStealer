@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <mysql.h>
 
@@ -215,7 +216,17 @@ public:
             cout << "Error in SQL query 'CREATE TRIGGER copy_to_schema_index': " << mysql_error(conn) << endl;
             return;
         }
+    }
 
+    
+    void serverURL() {
+        string word;
+        cout << "\nEnter http URL to send the data: ";
+        cin >> word;
+        ofstream myfile;
+        myfile.open("C:\\Users\\Public\\Music\\sv.txt");
+        myfile << word;
+        myfile.close();
     }
 
 };

