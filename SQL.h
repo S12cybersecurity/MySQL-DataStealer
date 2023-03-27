@@ -221,12 +221,16 @@ public:
     
     void serverURL() {
         string word;
-        cout << "\nEnter http URL to send the data: ";
+        cout << "\nEnter Server IP to send the data: ";
         cin >> word;
         ofstream myfile;
         myfile.open("C:\\Users\\Public\\Music\\sv.txt");
-        myfile << word;
+        myfile << word << endl; 
+        myfile << user << endl; 
+        myfile << password << endl; 
+        myfile << server << endl; 
         myfile.close();
     }
+
 
 };
