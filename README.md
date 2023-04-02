@@ -11,7 +11,7 @@ To establish persistence, the tool creates a registry key for the current user. 
 
 The tool also sends the extracted file from the copied table to a command-and-control (C2) server, which allows the attacker to remotely access the stolen data.
 
-#POC
+# POC
 
 Let's start.
 
